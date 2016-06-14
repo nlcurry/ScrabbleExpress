@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "db:drop": "dropdb scrabble_express",
+    "db:create": "createdb scrabble_express",
+    "db:seed": "clear; ",
+    "db:reset": "npm run db:drop; npm run db:create; npm run db:schema",
+    "db:schema": "clear; node tasks/load_schema.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -11,6 +16,7 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
+    "massive": "^2.3.0",
     "morgan": "~1.6.1",
     "nodemon": "^1.9.2",
     "serve-favicon": "~2.3.0"
