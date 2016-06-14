@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%= title%>
+    <% if (locals.word === undefined){ %>
+    <%= "No word yet"%>
+    <% } else { %>
+    <%= word + " is " + score %>
+    <% } %>
+
+    <form method="post" action="/scrabble/score" class="score-one">
+      <input type="text" name="word"><br>
+      <input type="submit" value="Find my score" class="btn btn-primary">
+    </form>
+  </body>
+</html>
